@@ -11,7 +11,7 @@
 		{
 			"matches": ["http://*/*", "https://*/*"],
 			"js": ["jquery.js", "jquery.hotkeys.js", "content.js"],
-			"exclude_globs":  ["https://plus.google.com/*", "https://docs.google.com/*"]
+			"exclude_globs":  ["https://plus.google.com/*", "https://docs.google.com/*", "https://sites.google.com/*"]
 		}
 	]
 }
