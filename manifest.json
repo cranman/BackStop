@@ -10,8 +10,7 @@
 	"content_scripts": [
 		{
 			"matches": ["http://*/*", "https://*/*"],
-			"js": ["jquery.js", "jquery.hotkeys.js", "content.js"],
-			"exclude_globs":  ["https://plus.google.com/*", "https://docs.google.com/*", "https://sites.google.com/*"]
+			"js": ["jquery.js", "jquery.js", "content.js"]
 		}
 	]
 }
