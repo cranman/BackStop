@@ -8,6 +8,7 @@
 			
 			notEditable = function(element) {
 				var edit = element.attr('contenteditable');
+
 				// Ensure backspace still works on any element with contenteditable="true"
 				if (typeof edit !== 'undefined' && edit !== false) {
 					return true;
