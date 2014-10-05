@@ -1,21 +1,26 @@
-$(document).keydown(function(e) {
-	// If backspace is pressed
-	if (e.which === 8) {
-		var active = $(document.activeElement);
-		
-		notEditable = function(element) {
-			var edit = element.attr('contenteditable');
+
+(function () {
+	var isWebInspector = !!$('body#-webkit-web-inspector');
+	$(document).keydown(function(e) {
+		// If backspace is pressed
+		if (e.which === 8) {
+			var active = $(document.activeElement);
 			
-			// Ensure backspace still works on any element with contenteditable="true"
-			if (typeof edit !== 'undefined' && edit !== false) {
-				return true;
-			} else if (element.is('input, textarea')) {
-				return true;
+			notEditable = function(element) {
+				var edit = element.attr('contenteditable');
+				// Ensure backspace still works on any element with contenteditable="true"
+				if (typeof edit !== 'undefined' && edit !== false) {
+					return true;
+				} else if (element.is('input, textarea')) {
+					return true;
+				} else if (isWebInspector && (element.attr('id') === 'console-prompt')) {
+					return true;
+				}
+				
+				return false;
 			}
 			
-			return false;
+			return notEditable(active);
 		}
-		
-		return notEditable(active);
-	}
-});
+	});
+}());
