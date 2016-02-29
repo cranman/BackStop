@@ -11,6 +11,8 @@ $(document).keydown(function(e) {
 				return true;
 			} else if (element.is('input, textarea')) {
 				return true;
+			} else if (active.attr('type') == 'application/x-shockwave-flash') {
+				return true;
 			}
 			
 			return false;
